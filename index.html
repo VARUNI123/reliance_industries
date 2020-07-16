@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RELIANCE INDUSTRIES</title>
+
+    <style>
+    header{
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .details{
+        width:44%;
+        margin: 1%;
+        padding: 1%;
+        border: 5px outset #888;
+        background-image: url("reliance logo.jpg");
+        background-size: cover;
+    }
+    p{
+        font-size: 20px;
+    }
+    .features{
+        color:olive;
+        font-weight:bold;
+    }
+    ul{
+          background:grey;
+  padding: 20px;
+
+    }
+    ul li{
+            background: #cce5ff;
+            margin: 5px;
+    }
+    </style>
+
+</head>
+<body> 
+    
+
+
+
+
+<script>
+
+let reliance = {
+                industries:[
+                        {
+                         name:"Jio Platforms Limited",
+                         year:2019,
+                         founder:"Mukesh Ambani",
+                         features:['JioTV','JioSaavn','JioChat','JioChat','JioBrowser','JioSwitch','JioPOS Lite','JioGameslite','JioMoney','JioMart']
+                        },
+                        {
+                         name:"Reliance Retail",
+                         year:2006,
+                         founder:"Mukesh Ambani",
+                         features:['Reliance Fresh','Reliance Smart','Reliance Digital','Reliance LYF','Reliance Jewels','  Reliance Trends, Reliance Footprint and Reliance Living','Reliance Market and Reliance Market','AJIO','Hamleys','Shri Kannan Departmental Store']
+                        },
+                          {
+                         name:"Reliance Life Sciences",
+                         year:2018,
+                         founder:"Mukesh Ambani",
+                         features:[' pharmaceuticals',' clinical research services', 'regenerative medicine',' molecular medicine', 'novel therapeutics', 'biofuels, plant biotechnology','industrial biotechnology sectors of the medical business industry']
+                        },
+                         {
+                         name:"Reliance Institute of Life Sciences",
+                         year:2001,
+                         founder:"Dhirubhai Ambani",
+                         features:[' fundamental and applied research', 'basic and applied sciences',' agriculture and environment sciences', 'process development and manufacturing sciences', 'clinical research','science and engineering courses in the computer',' biomedical and pharmaceutical fields']
+                        },
+                        {
+                         name:"Reliance Solar",
+                         year:2013,
+                         founder:"Mukesh Ambani",
+                         features:[' transportation',' distribution', 'warehousing', 'logistics', 'supply chain-related products',]
+                        },
+                         {
+                         name:"Reliance Clinical Research Services (RCRS)",
+                         year:2015,
+                         founder:"Mukesh Ambani",
+                         features:['  solar lanterns',' home lighting systems',' street lighting systems',' water purification systems',' refrigeration systems',' solar air conditioners']
+                        },
+                        {
+                         name:"Relicord ",
+                         year:2001,
+                         founder:"Dhirubhai Ambani ",
+                         features:['  licence by Food and Drug Administration (FDA)','cord blood banking service ']
+                        },
+                        {
+                         name:"Reliance Jio Infocomm Limited (RJIL)",
+                         year:2007,
+                         founder:"Mukesh Ambani ",
+                         features:['Mobile broadband','JioFiber',' Devices','LYF smartphones','JioPhone','Jionet WiFi','Jio apps','Affordable 4G phones','JioFi']
+                        },
+                          {
+                         name:"Reliance Industrial Infrastructure Limited (RIIL) ",
+                         year:1988,
+                         founder:"Mahesh Kalidas Kamdar",
+                         features:['Bharat Petroleum refinery','Reliance petrochemical complex ','petroleum products including naphtha and kerosene','supervisory control and data acquisition system','raw water pipeline system',' petrochemical product storage and distribution terminal']
+                        },
+                        {
+                         name:"LYF ",
+                         year:2015,
+                         founder:"Mukesh Ambani ",
+                         features:[' 4G handsets enabled with voice over LTE (VoLTE) ','set of smartphones - LYF Earth 1, LYF Water 1, and LYF Water 2']
+                        },
+                        ]
+                }
+let std = reliance['industries'];
+
+
+var body = document.body;
+var header = document.createElement("header");
+header.textContent = "RELIANCE INDUSTRIES";
+body.appendChild(header);
+
+
+
+var card = document.createElement("div");
+card.classList.add("card");
+body.append(card);
+
+for(var i = 0; i < std.length;i++){
+
+var details = document.createElement("div");
+details.classList.add("details");
+card.append(details);
+
+var title = document.createElement("p");
+
+var content = document.createTextNode("NAME : " +std[i].name);
+title.append(content);
+details.append(title);
+
+var year = document.createElement("p");
+var content = document.createTextNode("ESTABLISHED ON  : " +std[i].year);
+year.append(content);
+details.append(year);
+
+var founder= document.createElement("p");
+var content = document.createTextNode("FOUNDER : " +std[i].founder);
+founder.append(content);
+details.append(founder);
+
+var features=document.createElement("p");
+var content=document.createTextNode("FEATURES :")
+features.append(content);
+features.classList.add("features");
+details.append(features);
+
+var ul = document.createElement("ul");
+details.append(ul);
+
+std[i].features.forEach(function(value){
+        var li = document.createElement("li");
+        li.innerHTML += value;
+        ul.appendChild(li);
+});
+
+}
+</script>
+
+
+</body>
+</html>
